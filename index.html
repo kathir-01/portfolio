@@ -1,133 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kathiravan S K</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kathir's profile</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      color: #fff;
-    }
-    header, section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.8);
-      padding: 10px 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      min-height: 100vh;
-    }
-    #home {
-      background-image: url('https://t4.ftcdn.net/jpg/05/79/54/53/360_F_579545387_6JuKZXKyBuvrGTVxcCIXPZnE5cr41vC9.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    #about, #projects {
-      background: linear-gradient(to right, red, yellow);
-      color: #000;
-    }
-    #contact {
-      background: rgba(0, 0, 0, 0.9);
-      color: #fff;
-    }
-    .icon-links {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      font-size: 30px;
-    }
-    .tooltip {
-      position: relative;
-      display: inline-block;
-    }
-    .tooltiptext {
-      visibility: hidden;
-      width: max-content;
-      background-color: #555;
-      color: #fff;
-      text-align: center;
-      padding: 5px 10px;
-      border-radius: 6px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-    .tooltip a {
-      color: #fff;
-      transition: transform 0.2s;
-    }
-    .tooltip a:hover {
-      transform: scale(1.2);
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+    html{scroll-behavior:smooth}
+    body{line-height:1.6}
+    nav{position:fixed;top:0;width:100%;background:#111;padding:15px;z-index:1000}
+    nav ul{display:flex;justify-content:center;list-style:none}
+    nav li{margin:0 20px}
+    nav a{color:#fff;text-decoration:none;font-weight:bold}
+    nav a:hover{color:#0f0}
+    section{height:100vh;padding:80px 20px;color:#000}
+    #home{background: linear-gradient(to right, red, yellow);}
+    #about{background: linear-gradient(to right, #ff6a00, #ffe600);}
+    #projects{background: linear-gradient(to right, #ff0000, #ffcc00);}
+    #contact{background: linear-gradient(to right, #ff4d00, #ffff00);}
+    h1{text-align:center;margin-bottom:20px}
+    p{text-align:center;max-width:700px;margin:auto}
+    a.link{color:#000;text-decoration:underline;font-weight:bold}
+    a.link:hover{color:#d00}
   </style>
 </head>
 <body>
+
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <section id="home">
-    <h1>Welcome to My Portfolio</h1>
+    <h1>Welcome to My Website</h1>
+    <p>I'm KATHIRAVAN SK</p>
   </section>
 
   <section id="about">
     <h1>About Me</h1>
-    <p>I am Kathiravan S K, a passionate AI & Data Science student.</p>
+    <p>I am a B.Tech AI & DS student, passionate about web development, AI, and cool projects.</p>
   </section>
 
   <section id="projects">
-    <h1>Projects</h1>
-    <p>Here are some of my works and innovations.</p>
+    <h1>My Projects</h1>
+    <p>🚀 SOYELLA</p>
   </section>
 
   <section id="contact">
     <h1>Contact</h1>
-    <div class="icon-links">
-      <div class="tooltip">
-        <a href="tel:8608618488"><i class="fas fa-phone"></i></a>
-        <span class="tooltiptext">📞 8608618488</span>
-      </div>
-      <div class="tooltip">
-        <a href="mailto:kathiravan.sk.9d@gmail.com"><i class="fas fa-envelope"></i></a>
-        <span class="tooltiptext">📧 kathiravan.sk.9d@gmail.com</span>
-      </div>
-      <div class="tooltip">
-        <a href="https://instagram.com/kathiravan_s_k_" target="_blank"><i class="fab fa-instagram"></i></a>
-        <span class="tooltiptext">📸 @kathiravan_s_k_</span>
-      </div>
-    </div>
+    <p>
+      📞 8608618488<br />
+      📧 <a href="mailto:kathiravan.sk.9d@gmail.com" class="link">kathiravan.sk.9d@gmail.com</a><br />
+      📷 <a href="https://instagram.com/kathiravan_s_k_" target="_blank" class="link">@kathiravan_s_k_</a>
+    </p>
   </section>
+
 </body>
 </html>
