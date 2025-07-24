@@ -32,6 +32,7 @@
       flex-direction: column;
       align-items: center;
       cursor: pointer;
+      position: relative;
     }
     .contact-item i {
       font-size: 40px;
@@ -46,7 +47,7 @@
       overflow: hidden;
       transition: max-height 0.5s ease;
     }
-    .contact-item.active .info {
+    .contact-item:hover .info {
       max-height: 100px;
     }
     .info a {
@@ -100,12 +101,12 @@
   <section id="contact">
     <h1>Contact</h1>
     <div class="contact-container">
-      <div class="contact-item" onclick="toggleInfo(0)">
+      <div class="contact-item">
         <i class="fas fa-phone"></i>
         <div class="info">📞 8608618488</div>
       </div>
 
-      <div class="contact-item" onclick="toggleInfo(1)">
+      <div class="contact-item">
         <i class="fas fa-envelope"></i>
         <div class="info">📧 <a href="mailto:kathiravan.sk.9d@gmail.com">kathiravan.sk.9d@gmail.com</a></div>
       </div>
@@ -121,19 +122,6 @@
       </div>
     </div>
   </section>
-
-  <script>
-    function toggleInfo(index) {
-      const items = document.querySelectorAll('.contact-item');
-      items.forEach((item, i) => {
-        if (i === index) {
-          item.classList.toggle('active');
-        } else {
-          item.classList.remove('active');
-        }
-      });
-    }
-  </script>
 
 </body>
 </html>
