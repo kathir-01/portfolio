@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>kathir's profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
     html{scroll-behavior:smooth}
@@ -13,15 +14,19 @@
     nav li{margin:0 20px}
     nav a{color:#fff;text-decoration:none;font-weight:bold}
     nav a:hover{color:#0f0}
-    section{height:100vh;padding:80px 20px;color:#000}
-    #home{background: linear-gradient(to right, red, yellow);}
-    #about{background: linear-gradient(to right, #ff6a00, #ffe600);}
-    #projects{background: linear-gradient(to right, #ff0000, #ffcc00);}
-    #contact{background: linear-gradient(to right, #ff4d00, #ffff00);}
-    h1{text-align:center;margin-bottom:20px}
-    p{text-align:center;max-width:700px;margin:auto}
-    a.link{color:#000;text-decoration:underline;font-weight:bold}
-    a.link:hover{color:#d00}
+    section{min-height:100vh;padding:80px 20px;color:#000}
+    #home{background-image: url('https://t4.ftcdn.net/jpg/05/79/54/53/360_F_579545387_6JuKZXKyBuvrGTVxcCIXPZnE5cr41vC9.jpg'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 3px #000; text-align: center;}
+    #about{background: linear-gradient(to right, #ff6a00, #ffe600);text-align:center}
+    #projects{background: linear-gradient(to right, #ff0000, #ffcc00);text-align:center}
+    #contact{background: linear-gradient(to right, #ff4d00, #ffff00);text-align:center}
+    h1{margin-bottom:20px}
+    .icon-box{margin:20px auto;cursor:pointer;width:max-content}
+    .icon-box i{font-size:40px;margin:10px;transition:transform 0.3s}
+    .icon-box:hover i{transform:scale(1.2)}
+    .info{max-height:0;overflow:hidden;transition:max-height 0.5s ease}
+    .icon-box.active + .info{max-height:100px}
+    .info a{color:#000;text-decoration:none;font-weight:bold}
+    .info a:hover{color:#d00}
   </style>
 </head>
 <body>
@@ -52,12 +57,40 @@
 
   <section id="contact">
     <h1>Contact</h1>
-    <p>
-      📞 8608618488<br />
-      📧 <a href="mailto:kathiravan.sk.9d@gmail.com" class="link">kathiravan.sk.9d@gmail.com</a><br />
-      📷 <a href="https://instagram.com/kathiravan_s_k_" target="_blank" class="link">@kathiravan_s_k_</a>
-    </p>
+
+    <div class="icon-box" onclick="toggleInfo(0)">
+      <i class="fas fa-phone"></i>
+    </div>
+    <div class="info">📞 8608618488</div>
+
+    <div class="icon-box" onclick="toggleInfo(1)">
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div class="info">📧 <a href="mailto:kathiravan.sk.9d@gmail.com">kathiravan.sk.9d@gmail.com</a></div>
+
+    <div class="icon-box" onclick="window.open('https://instagram.com/kathiravan_s_k_', '_blank')">
+      <i class="fab fa-instagram"></i>
+    </div>
+
   </section>
+
+  <script>
+    function toggleInfo(index){
+      const boxes = document.querySelectorAll('.icon-box');
+      const infos = document.querySelectorAll('.info');
+      boxes.forEach((b,i)=>{
+        if(infos[index]){
+          if(i === index){
+            b.classList.toggle('active');
+            infos[i].style.maxHeight = infos[i].style.maxHeight ? null : '100px';
+          } else {
+            b.classList.remove('active');
+            if (infos[i]) infos[i].style.maxHeight = null;
+          }
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
