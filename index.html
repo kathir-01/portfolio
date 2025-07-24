@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> kathir's profile</title>
+  <title>kathir's profile</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
     html{scroll-behavior:smooth}
@@ -14,27 +14,23 @@
     nav a{color:#fff;text-decoration:none;font-weight:bold}
     nav a:hover{color:#0f0}
     section{height:100vh;padding:80px 20px;color:#000}
-    #home{
-      background: linear-gradient(to right, red, yellow);
-    }
-    #about{
-      background: linear-gradient(to right, #ff6a00, #ffe600);
-    }
-    #projects{
-      background: linear-gradient(to right, #ff0000, #ffcc00);
-    }
-    #contact{
-      background: linear-gradient(to right, #ff4d00, #ffff00);
-    }
+    #home{background: linear-gradient(to right, red, yellow);}
+    #about{background: linear-gradient(to right, #ff6a00, #ffe600);}
+    #projects{background: linear-gradient(to right, #ff0000, #ffcc00);}
+    #contact{background: linear-gradient(to right, #ff4d00, #ffff00);}
     h1{text-align:center;margin-bottom:20px}
     p{text-align:center;max-width:700px;margin:auto}
-    a.link{color:#000;text-decoration:underline;font-weight:bold}
-    a.link:hover{color:#d00}
-    .emoji {margin-right: 8px;}
+    .contact-option { text-align: center; margin: 20px 0; cursor: pointer; transition: transform 0.3s ease; }
+    .contact-option:hover { transform: scale(1.05); }
+    .icon { font-size: 30px; margin-right: 10px; vertical-align: middle; }
+    .detail { display: none; font-size: 18px; margin-top: 10px; animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .show { display: block; }
+    a.link { color:#000; text-decoration:underline; font-weight:bold }
+    a.link:hover { color:#d00 }
   </style>
 </head>
 <body>
-
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
@@ -60,14 +56,32 @@
   </section>
 
   <section id="contact">
-    <h1>📞📧📱 Contact</h1>
-    <p>
-      📱 Phone: <a href="tel:8608618488" class="link">8608618488</a><br />
-      📧 Email: <a href="mailto:kathiravan.sk.9d@gmail.com" class="link">kathiravan.sk.9d@gmail.com</a><br />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="20" style="vertical-align:middle;margin-right:5px;"> 
-      <a href="https://instagram.com/kathiravan_s_k_" target="_blank" class="link">@kathiravan_s_k_</a>
-    </p>
+    <h1>📞 Contact</h1>
+
+    <div class="contact-option" onclick="toggleDetail('emailDetail')">
+      📧 Email
+      <div id="emailDetail" class="detail">kathiravan.sk.9d@gmail.com</div>
+    </div>
+
+    <div class="contact-option" onclick="toggleDetail('phoneDetail')">
+      📱 Phone
+      <div id="phoneDetail" class="detail">8608618488</div>
+    </div>
+
+    <div class="contact-option">
+      <a href="https://instagram.com/kathiravan_s_k_" target="_blank" style="text-decoration: none; color: black;">
+        📸 Instagram
+      </a>
+    </div>
+
   </section>
+
+  <script>
+    function toggleDetail(id) {
+      const element = document.getElementById(id);
+      element.classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>
