@@ -20,13 +20,43 @@
     #projects{background: linear-gradient(to right, #ff0000, #ffcc00);text-align:center}
     #contact{background: linear-gradient(to right, #ff4d00, #ffff00);text-align:center}
     h1{margin-bottom:20px}
-    .icon-box{margin:20px auto;cursor:pointer;width:max-content}
-    .icon-box i{font-size:40px;margin:10px;transition:transform 0.3s}
-    .icon-box:hover i{transform:scale(1.2)}
-    .info{max-height:0;overflow:hidden;transition:max-height 0.5s ease}
-    .icon-box.active + .info{max-height:100px}
-    .info a{color:#000;text-decoration:none;font-weight:bold}
-    .info a:hover{color:#d00}
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+    .contact-item i {
+      font-size: 40px;
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+    .contact-item:hover i {
+      transform: scale(1.2);
+    }
+    .info {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    .contact-item.active .info {
+      max-height: 100px;
+    }
+    .info a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .info a:hover {
+      color: #d00;
+    }
   </style>
 </head>
 <body>
@@ -47,7 +77,19 @@
 
   <section id="about">
     <h1>About Me</h1>
-    <p>I am a B.Tech AI & DS student, passionate about web development, AI, and cool projects.</p>
+    <p><strong>Date of Birth:</strong> January 21, 2007</p>
+    <p><strong>Institution:</strong> Sairam Institute of Technology</p>
+    <p><strong>Course:</strong> B.Tech in AI & Data Science</p>
+    <p><strong>Year:</strong> 2nd Year</p>
+    <br>
+    <p><strong>Interests & Hobbies:</strong></p>
+    <ul style="list-style: none; padding: 0;">
+      <li>📌 Coding: Python, C, C++</li>
+      <li>⚽ Sports: Passionate about various sports activities</li>
+      <li>🎮 eSports: Competitive gaming enthusiast</li>
+    </ul>
+    <br>
+    <p>I'm a dedicated student with a passion for technology and innovation. When I'm not coding or studying, you'll find me engaged in sports activities or exploring the competitive world of eSports.</p>
   </section>
 
   <section id="projects">
@@ -57,36 +99,32 @@
 
   <section id="contact">
     <h1>Contact</h1>
+    <div class="contact-container">
+      <div class="contact-item" onclick="toggleInfo(0)">
+        <i class="fas fa-phone"></i>
+        <div class="info">📞 8608618488</div>
+      </div>
 
-    <div class="icon-box" onclick="toggleInfo(0)">
-      <i class="fas fa-phone"></i>
+      <div class="contact-item" onclick="toggleInfo(1)">
+        <i class="fas fa-envelope"></i>
+        <div class="info">📧 <a href="mailto:kathiravan.sk.9d@gmail.com">kathiravan.sk.9d@gmail.com</a></div>
+      </div>
+
+      <div class="contact-item" onclick="window.open('https://instagram.com/kathiravan_s_k_', '_blank')">
+        <i class="fab fa-instagram"></i>
+        <div class="info">📷 Instagram</div>
+      </div>
     </div>
-    <div class="info">📞 8608618488</div>
-
-    <div class="icon-box" onclick="toggleInfo(1)">
-      <i class="fas fa-envelope"></i>
-    </div>
-    <div class="info">📧 <a href="mailto:kathiravan.sk.9d@gmail.com">kathiravan.sk.9d@gmail.com</a></div>
-
-    <div class="icon-box" onclick="window.open('https://instagram.com/kathiravan_s_k_', '_blank')">
-      <i class="fab fa-instagram"></i>
-    </div>
-
   </section>
 
   <script>
-    function toggleInfo(index){
-      const boxes = document.querySelectorAll('.icon-box');
-      const infos = document.querySelectorAll('.info');
-      boxes.forEach((b,i)=>{
-        if(infos[index]){
-          if(i === index){
-            b.classList.toggle('active');
-            infos[i].style.maxHeight = infos[i].style.maxHeight ? null : '100px';
-          } else {
-            b.classList.remove('active');
-            if (infos[i]) infos[i].style.maxHeight = null;
-          }
+    function toggleInfo(index) {
+      const items = document.querySelectorAll('.contact-item');
+      items.forEach((item, i) => {
+        if (i === index) {
+          item.classList.toggle('active');
+        } else {
+          item.classList.remove('active');
         }
       });
     }
